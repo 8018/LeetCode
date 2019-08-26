@@ -7,7 +7,7 @@ public class TwoSum {
 		int[] nums = {1,3,5,2,8};
 		int[] result = twoSum(nums, 9);
 		for (int i = 0; i < result.length; i++) {
-			System.out.println(result[i]);
+			System.out.print("index="+result[i]+" ");
 		}
 	}
 	
