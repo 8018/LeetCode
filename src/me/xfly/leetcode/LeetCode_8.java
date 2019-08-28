@@ -16,7 +16,7 @@ public class LeetCode_8 {
 
 		Character chas = chars[0];
 
-		if (chas == '-' || Character.isDigit(chas)) {
+		if (chas == '-' ||chas == '+' || Character.isDigit(chas)) {
 			return getNumber(chars, 0);
 		}
 
@@ -27,6 +27,8 @@ public class LeetCode_8 {
 		int sign = 1;
 		if (chars[0] == '-') {
 			sign = -1;
+			++index;
+		}else if (chars[0] == '+') {
 			++index;
 		}
 
