@@ -16,7 +16,7 @@ public class LeetCode_5 {
 		int start = 0;
 		int end = 0;
 		int maxLength = 0;
-
+		
 		//数组下标要特别注意
 		for (int i = 0; i <= 2 * n - 1; i++) {
 			int length = getLongestPalindrome(chars, i / 2, (i + 1) / 2);
