@@ -17,9 +17,11 @@ public class LeetCode_5 {
 		int end = 0;
 		int maxLength = 0;
 
+		//数组下标要特别注意
 		for (int i = 0; i <= 2 * n - 1; i++) {
 			int length = getLongestPalindrome(chars, i / 2, (i + 1) / 2);
 			if (length > maxLength) {
+				//长度为 length 的字符串，它的尾标-首标的距离其实是 leng -1
 				start = (i + 1) / 2 - length / 2;
 				end = (i + 1) / 2 + (length - 1) / 2;
 				maxLength = length;
@@ -35,6 +37,9 @@ public class LeetCode_5 {
 			left--;
 			right++;
 		}
+		//当前回文串的长度
+		//left 指向回文串前面一位，right 指向回文串后一位 
+		//回文串夹在中间，减一才是回文串的真正长度
 		return right - left - 1;
 	}
 
