@@ -21,13 +21,8 @@ public class LeetCode_146 {
 
 class LRUCache {
 	LinkedHashMap<Integer, Integer> map;
-
 	public LRUCache(int capacity) {
 		map = new LinkedHashMap<Integer, Integer>(capacity,0.75f,true){
-			/**
-			 * 
-			 */
-			private static final long serialVersionUID = 1L;
 
 			@Override
 			protected boolean removeEldestEntry(java.util.Map.Entry<Integer, Integer> eldest) {
@@ -35,7 +30,6 @@ class LRUCache {
                 if (tooBig) {
                     map.remove(eldest.getKey());
                 }
-               
                 return tooBig;
 			}
 		};
