@@ -60,17 +60,8 @@ public class LeetCode23 {
 			return node1;
 		}
 
-		ListNode mergedNode;
-		ListNode nextNode;
-		if (node1.val <= node2.val) {
-			mergedNode = node1;
-			node1 = node1.next;
-		} else {
-			mergedNode = node2;
-			node2 = node2.next;
-		}
-
-		nextNode = mergedNode;
+		ListNode mergedNode = new ListNode(0);
+		ListNode nextNode = mergedNode;
 
 		while (node1 != null && node2 != null) {
 			if (node1.val <= node2.val) {
@@ -95,6 +86,6 @@ public class LeetCode23 {
 			node2 = node2.next;
 		}
 
-		return mergedNode;
+		return mergedNode.next;
 	}
 }
