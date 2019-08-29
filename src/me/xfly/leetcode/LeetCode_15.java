@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LeetCode_15 {
 	public static void main(String[] args) {
-		int[] nums = { 0,-4,-1,-4,-2,-3,2};
+		int[] nums = { 0, -4, -1, -4, -2, -3, 2 };
 		List<List<Integer>> result = threeSum(nums);
 		System.out.println(result);
 
@@ -14,7 +14,7 @@ public class LeetCode_15 {
 
 	static List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> lists = new ArrayList<>();
-		
+
 		if (nums == null || nums.length < 3) {
 			return lists;
 		}
@@ -23,11 +23,13 @@ public class LeetCode_15 {
 
 		int n = nums.length;
 
+		//不符合条件，直接返回
 		if (nums[0] > 0 || nums[n - 1] < 0) {
 			return lists;
 		}
 
 		for (int i = 0; i < n - 2; i++) {
+			//剪枝
 			if (nums[i] > 0) {
 				return lists;
 			}
@@ -35,11 +37,14 @@ public class LeetCode_15 {
 			int start = i + 1, end = n - 1;
 
 			if (i > 0 && nums[i - 1] == nums[i]) {
+				// 数字重复，跳过去重
 				continue;
 			}
 
 			while (start < end) {
-				if (nums[i] + nums[start] + nums[end] == 0) {
+
+				int sum = nums[i] + nums[start] + nums[end];
+				if (sum == 0) {
 
 					List<Integer> integers = new ArrayList<Integer>();
 					integers.add(nums[start]);
@@ -47,18 +52,24 @@ public class LeetCode_15 {
 					integers.add(nums[i]);
 					lists.add(integers);
 
-					while (start<end && nums[start] == nums[start+1]) start++; // 去重
-                    while (start<end && nums[end] == nums[end-1]) end--; // 去重
+					// 去重
+					while (start < end && nums[start] == nums[start + 1]) {
+						start++;
+					}
+					// 去重
+					while (start < end && nums[end] == nums[end - 1]) {
+						end--;
+					}
 
 					start++;
 					end--;
 					continue;
 				}
 
-				if (nums[i] + nums[start] + nums[end] < 0) {
+				if (sum < 0) {
 					start++;
 				}
-				if (nums[i] + nums[start] + nums[end] > 0) {
+				if (sum > 0) {
 					end--;
 				}
 			}
