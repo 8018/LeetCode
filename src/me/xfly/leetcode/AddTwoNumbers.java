@@ -1,6 +1,11 @@
 package me.xfly.leetcode;
 
 public class AddTwoNumbers {
+	
+	public static void main(String[] args) {
+		
+	}
+	
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode resultHead = new ListNode(0);
 		ListNode p = l1, q = l2, curr = resultHead;
