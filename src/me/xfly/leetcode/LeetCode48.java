@@ -1,6 +1,6 @@
 package me.xfly.leetcode;
 
-public class RotateMatrix {
+public class LeetCode48 {
 	public static void rotateMatrix(int[][] matrix) {
 		int n = matrix.length;
 

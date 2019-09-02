@@ -1,6 +1,6 @@
 package me.xfly.leetcode;
 
-public class FindMedianInTwoArray {
+public class LeetCode_4 {
 	public static void main(String[] args) {
 		int[] nums1 = { 2, 3 };
 		int[] nums2 = { 1, 3, 5 };
