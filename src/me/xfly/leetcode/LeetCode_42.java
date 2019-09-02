@@ -19,9 +19,12 @@ public class LeetCode_42 {
 			return 0;
 		}
 
+		//桶的两边比较低的一边
 		int minHeight = Math.min(height[startIndex], height[endIndex]);
 		int minIndex = startIndex;
 
+		//找到能将桶一份为 2 的那个值
+		//比上面记录的“桶”的短板高的那个
 		for (int i = startIndex + 1; i < endIndex; i++) {
 			if (height[i] > minHeight) {
 				minHeight = height[i];
@@ -29,12 +32,15 @@ public class LeetCode_42 {
 			}
 		}
 
+		//两个桶的容量和
 		if (minIndex != startIndex) {
 			return trap(height, startIndex, minIndex) + trap(height, minIndex, endIndex);
 		}
 
+		//桶的容量
 		int capacity = minHeight * (endIndex - startIndex - 1);
 
+		//减去中间可能存在的“砖块”
 		for (int i = startIndex + 1; i < endIndex; i++) {
 			capacity -= height[i];
 		}

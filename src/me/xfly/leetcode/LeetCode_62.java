@@ -20,6 +20,10 @@ public class LeetCode_62 {
 		return uniquePaths(m, n - 1) + uniquePaths(m - 1, n);
 	}
 
+	
+	/**
+	 * DP 用数组记录到达这个节点的路径数
+	 */
 	public static int uniquePaths2(int m, int n) {
 		if (m == 0 || n == 0) {
 			return 0;

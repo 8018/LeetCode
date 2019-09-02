@@ -42,8 +42,10 @@ public class LeetCode_8 {
 					temp = temp * sign;
 				}
 
+				//最大值溢出
 				if (number > Integer.MAX_VALUE / 10 || (number == Integer.MAX_VALUE / 10 && temp > 7))
 					return Integer.MAX_VALUE;
+				//最小值溢出
 				if (number < Integer.MIN_VALUE / 10 || (number == Integer.MIN_VALUE / 10 && temp < -8))
 					return Integer.MIN_VALUE;
 				number = number * 10 + temp;
