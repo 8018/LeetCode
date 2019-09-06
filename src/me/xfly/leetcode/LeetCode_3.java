@@ -1,9 +1,9 @@
-package me.xfly.leetcode.chars;
+package me.xfly.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestNonRepeatSubString {
+public class LeetCode_3 {
 	public static void main(String[] args) {
 		String string = "pwwkew";
 		System.out.println(lengthOfLongestSubstring(string));

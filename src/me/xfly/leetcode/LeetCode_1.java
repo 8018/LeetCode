@@ -2,7 +2,7 @@ package me.xfly.leetcode;
 
 import java.util.HashMap;
 
-public class TwoSum {
+public class LeetCode_1 {
 	public static void main(String[] args) {
 		int[] nums = {1,3,5,2,8};
 		int[] result = twoSum(nums, 9);

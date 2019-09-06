@@ -1,6 +1,6 @@
 package me.xfly.leetcode;
 
-public class AddTwoNumbers {
+public class LeetCode_2 {
 	
 	public static void main(String[] args) {
 		

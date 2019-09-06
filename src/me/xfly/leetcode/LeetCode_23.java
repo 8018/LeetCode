@@ -1,6 +1,6 @@
 package me.xfly.leetcode;
 
-public class LeetCode23 {
+public class LeetCode_23 {
 
 	public static void main(String[] args) {
 		ListNode nod1 = new ListNode(1);
