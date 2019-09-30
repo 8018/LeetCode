@@ -3,7 +3,7 @@ package me.xfly.leetcode;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LeetCod_145 {
+public class LeetCode_145 {
 
 	public static void main(String[] args) {
 		TreeNode node = new TreeNode(1);
