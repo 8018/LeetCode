@@ -1,8 +1,5 @@
 package me.xfly.leetcode;
 
-import com.sun.jmx.remote.internal.ArrayQueue;
-
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
