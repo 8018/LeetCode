@@ -1,33 +1,44 @@
 package me.xfly.leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 public class Solution {
     public static void main(String[] args) {
-        int[] coins = {5,2,1};
-        System.out.println(coinChange(coins,11));
+        TreeNode node = new TreeNode(1);
+        TreeNode node2 = new TreeNode(2);
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+
+        node.left = node2;
+        node.right = node3;
+        node2.left = node4;
     }
 
-    public  static int coinChange(int[] coins, int amount) {
-        int i = coins.length-1;
-        int result = 0;
+    public boolean isValidBST(TreeNode root) {
+        if (root== null||(root.left== null && root.right==null)){
+            return true;
+        }
+        return isValidSubBST(root);
+    }
 
-        if (amount==0){
-            return 0;
+    public boolean isValidSubBST(TreeNode root) {
+        if (root.left!=null&&root.left.val>root.val){
+            return false;
         }
 
-        while (i >= 0 && amount > 0) {
-            if (amount - coins[i] > 0) {
-                amount = amount - coins[i];
-                result++;
-            }
-            if (amount - coins[i] == 0) {
-                return ++result;
-            }
-            if (amount-coins[i] < 0) {
-                i--;
-            }
+        if (root.right!=null&&root.right.val<root.val){
+            return false;
         }
 
+        if (root.left!=null){
+           return isValidBST(root.left);
+        }
+        if (root.right!=null){
+            isValidBST(root.right);
+        }
 
-        return -1;
+        return true;
     }
 }
