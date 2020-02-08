@@ -1,9 +1,7 @@
 package me.xfly.leetcode.binarytree;
 
-import me.xfly.leetcode.binarytree.TreeNode;
-
 public class LeetCode_617 {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         int[] nums = {1,2,3,-1,-1,5};
         TreeNode node = TreeNode.array2TreeNode(nums);
         System.out.println();
