@@ -1,4 +1,4 @@
-package me.xfly.leetcode;
+package me.xfly.leetcode.binarytree;
 
 import java.util.ArrayList;
 import java.util.List;

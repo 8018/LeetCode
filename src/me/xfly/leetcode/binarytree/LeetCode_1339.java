@@ -1,6 +1,4 @@
-package me.xfly.leetcode;
-
-import static java.lang.Math.pow;
+package me.xfly.leetcode.binarytree;
 
 public class LeetCode_1339 {
     public static void main(String[] args) {

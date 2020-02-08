@@ -1,4 +1,6 @@
-package me.xfly.leetcode;
+package me.xfly.leetcode.binarytree;
+
+import me.xfly.leetcode.binarytree.TreeNode;
 
 public class LeetCode_104 {
 
