@@ -1,7 +1,5 @@
 package me.xfly.leetcode.binarytree;
 
-import me.xfly.leetcode.binarytree.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
