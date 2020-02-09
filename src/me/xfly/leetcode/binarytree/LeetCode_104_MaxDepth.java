@@ -2,7 +2,7 @@ package me.xfly.leetcode.binarytree;
 
 import me.xfly.leetcode.binarytree.TreeNode;
 
-public class LeetCode_104 {
+public class LeetCode_104_MaxDepth {
 
     public static void main(String[] args) {
         TreeNode node = new TreeNode(1);

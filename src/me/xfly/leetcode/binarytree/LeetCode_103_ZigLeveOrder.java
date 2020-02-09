@@ -5,7 +5,7 @@ import me.xfly.leetcode.binarytree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCode_103 {
+public class LeetCode_103_ZigLeveOrder {
 
     public static void main(String[] args) {
         TreeNode node = new TreeNode(1);

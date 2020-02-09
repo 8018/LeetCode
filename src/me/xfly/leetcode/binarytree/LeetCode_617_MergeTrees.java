@@ -1,6 +1,6 @@
 package me.xfly.leetcode.binarytree;
 
-public class LeetCode_617 {
+public class LeetCode_617_MergeTrees {
         public static void main(String[] args) {
         int[] nums = {1,2,3,-1,-1,5};
         TreeNode node = TreeNode.array2TreeNode(nums);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class LeetCode_94 {
+public class LeetCode_94_InOrder {
 	public static void main(String[] args) {
 		TreeNode node = new TreeNode(1);
 		TreeNode node2 = new TreeNode(2);

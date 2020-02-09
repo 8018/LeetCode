@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class LeetCode_144 {
+public class LeetCode_144_PreOrder {
 
 	public static void main(String[] args) {
 		TreeNode node = new TreeNode(1);

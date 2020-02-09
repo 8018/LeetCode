@@ -1,11 +1,9 @@
 package me.xfly.leetcode.binarytree;
 
-import me.xfly.leetcode.binarytree.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCode_102 {
+public class LeetCode_102_LevelOrder {
 
     public static void main(String[] args) {
         TreeNode node = new TreeNode(1);

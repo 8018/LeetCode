@@ -1,6 +1,5 @@
 package me.xfly.leetcode.binarytree;
 
-import me.xfly.leetcode.binarytree.TreeNode;
 
 /**
  * 假设一个二叉搜索树具有如下特征：
