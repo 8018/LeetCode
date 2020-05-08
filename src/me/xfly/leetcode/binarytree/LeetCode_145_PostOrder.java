@@ -1,9 +1,11 @@
-package me.xfly.leetcode;
+package me.xfly.leetcode.binarytree;
+
+import me.xfly.leetcode.binarytree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class LeetCode_145 {
+public class LeetCode_145_PostOrder {
 
 	public static void main(String[] args) {
 		TreeNode node = new TreeNode(1);
@@ -16,7 +18,7 @@ public class LeetCode_145 {
 
 		node.left = node2;
 		node.right = node3;
-		// node2.left = node4;
+		node2.left = node4;
 		node2.right = node5;
 		node3.left = node6;
 		node3.right = node7;

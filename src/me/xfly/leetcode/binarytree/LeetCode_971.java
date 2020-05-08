@@ -1,12 +1,9 @@
-package me.xfly.leetcode;
+package me.xfly.leetcode.binarytree;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LeetCode_971 {
-
-
-
 
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(8);
