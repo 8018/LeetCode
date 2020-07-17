@@ -14,6 +14,7 @@ public class LeetCode_956 {
         for (int i : rods) {
             s += i;
         }
+        //公差为 i 时，最大公共高度
         int[] dp = new int[s+1];
         Arrays.fill(dp, -1);
 
@@ -34,6 +35,10 @@ public class LeetCode_956 {
                 //新的公共高度取 current[i]+Math.min(i,h) 和原有高度中高的那个
                 int index = Math.abs(i-h);
                 dp[index] = Math.max(dp[index],current[i]+Math.min(i,h));
+
+                //其实还有一种情况，哪边都不放
+                //原有公差、高度都没变 所以省略
+                //dp[i] = current[i];
             }
         }
         return dp[0];
