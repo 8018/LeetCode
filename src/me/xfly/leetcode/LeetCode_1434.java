@@ -23,6 +23,12 @@ public class LeetCode_1434 {
         System.out.println(numberWays(hats));
     }
 
+    /**
+     * 每增加一顶帽子，这顶帽子有两种分配情况
+     * 1、不分配
+     * 原来有几种分配情况还是几种，新的帽子不分配方案数不会减少
+     * 2、戴在需要他但是原来没有得到的人的头上
+     * */
     public static int numberWays(List<List<Integer>> hats) {
         int n = hats.size();
         int N = 1000000007;
@@ -55,15 +61,14 @@ public class LeetCode_1434 {
                 //1.第i个帽子不分配的情况
                 dp[i][j] = dp[i - 1][j];
                 //2.第i个帽子分给第k个人的情况
+
                 //此时需要满足第k个人喜欢第i顶帽子,就是从喜欢第i顶帽子人的集合中找出这个人
                 //判断第k个人在二进制方案j的第k个位数上是否为1,为1表示分配给这个人是一种方案，就可以加入这个方案
-                for (int k : htp.get(i - 1)) {
-                    System.out.println(j);
-                    System.out.println(k);
 
+                for (int k : htp.get(i - 1)) {
+                    //(j & (1 << k)) != 0 说明编号为 k 的 person 没有分配到帽子的方案数
+                    //现在 k person 有了帽子，所以方案数增加
                     if ((j & (1 << k)) != 0) {
-                        int temp = 1<<k;
-                        int index = j - (1 << k);
                         dp[i][j] += dp[i - 1][j - (1 << k)]; //状态转移 加上这个不同方案
                         // [j-(1<<k)] 表示将k这个人在方案j上的第k位的1去掉即前[i-1]个帽子不再分配给第k个人
                         // [j-(1<<k)] 写法等同于 [j^(1<<k)]
