@@ -1,8 +1,6 @@
 package me.xfly.leetcode;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class LeetCode_1402 {
     public static void main(String[] args) {
@@ -10,6 +8,9 @@ public class LeetCode_1402 {
         System.out.println(maxSatisfaction(satisfaction));
     }
 
+    //贪心算法
+    //假设排序后数据为 s0 s1 s2 s3 ...... 从大到小排列
+    // 如果前 n 项和大于0，可以继续向上累加
     public static  int maxSatisfaction(int[] satisfaction) {
         Arrays.sort(satisfaction);
 
