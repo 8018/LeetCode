@@ -7,11 +7,12 @@ public class LeetCode_964 {
 
     public static void main(String[] args) {
         LeetCode_964 leetCode_964 = new LeetCode_964();
-        System.out.println(leetCode_964.leastOpsExpressTarget(3,19));
+        System.out.println(leetCode_964.leastOpsExpressTarget(5, 501));
     }
 
     Map<String, Integer> memo;
     int x;
+
     public int leastOpsExpressTarget(int x, int target) {
         memo = new HashMap();
         this.x = x;
@@ -19,9 +20,11 @@ public class LeetCode_964 {
     }
 
     public int dp(int i, int target) {
-        String code = "" + i + "#" + target;
-        if (memo.containsKey(code))
-            return memo.get(code);
+        String key = "" + i + "#" + target;
+
+        if (memo.containsKey(key)) {
+            return memo.get(key);
+        }
 
         int ans;
         if (target == 0) {
@@ -33,11 +36,10 @@ public class LeetCode_964 {
         } else {
             int t = target / x;
             int r = target % x;
-            ans = Math.min(r * cost(i) + dp(i+1, t),
-                    (x-r) * cost(i) + dp(i+1, t+1));
-        }
 
-        memo.put(code, ans);
+            ans = Math.min(r * cost(i) + dp(i + 1, t), (x - r) * cost(i) + dp(i + 1, t + 1));
+        }
+        memo.put(key, ans);
         return ans;
     }
 
