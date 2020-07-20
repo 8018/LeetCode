@@ -1,10 +1,118 @@
 package me.xfly.leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
 public class LeetCode_4 {
 	public static void main(String[] args) {
-		int[] nums1 = { 2, 3 };
+		/*int[] nums1 = { 2, 3 };
 		int[] nums2 = { 1, 3, 5 };
-		System.out.println(findMedianSortedArrays2(nums1, nums2));
+		System.out.println(findMedianSortedArrays2(nums1, nums2));*/
+
+		//multiply("123","23");
+		/*int[] nums1 = { 1,2, 3 };
+
+		permute(nums1);*/
+
+		//grayCode(3);
+
+		ListNode nod1 = new ListNode(1);
+		ListNode nod2 = new ListNode(2);
+		ListNode nod3 = new ListNode(3);
+		ListNode nod4 = new ListNode(4);
+		ListNode nod5 = new ListNode(5);
+		ListNode nod6 = new ListNode(6);
+		ListNode nod7 = new ListNode(7);
+		ListNode nod8 = new ListNode(8);
+		ListNode nod9 = new ListNode(9);
+
+		nod1.next = nod2;
+		nod2.next = nod3;
+
+		nod3.next = nod4;
+		nod4.next = nod5;
+
+		nod5.next = nod6;
+		nod6.next = nod7;
+		nod7.next = nod8;
+		nod8.next = nod9;
+		reverseList(nod1);
+	}
+
+	public static ListNode reverseList(ListNode head) {
+		if (head == null || head.next == null) return head;
+		ListNode p = reverseList(head.next);
+		head.next.next = head;
+		head.next = null;
+		return p;
+	}
+
+
+	public static ArrayList<Integer> grayCode(int n) {
+		ArrayList<Integer> res = new ArrayList<>();
+		int num = 1 << n;
+		for (int i = 0; i < num; i++) {
+			res.add(i >> 1 ^ i);
+		}
+		return res;
+	}
+
+
+
+	public static void backtrack(int n,
+						  ArrayList<Integer> output,
+						  List<List<Integer>> res,
+						  int first) {
+		// 所有数都填完了
+		if (first == n)
+			res.add(new ArrayList<Integer>(output));
+		for (int i = first; i < n; i++) {
+			// 动态维护数组
+			Collections.swap(output, first, i);
+			// 继续递归填下一个数
+			backtrack(n, output, res, first + 1);
+			// 撤销操作
+			Collections.swap(output, first, i);
+		}
+	}
+
+	public static List<List<Integer>> permute(int[] nums) {
+		List<List<Integer>> res = new LinkedList();
+
+		ArrayList<Integer> output = new ArrayList<Integer>();
+		for (int num : nums)
+			output.add(num);
+
+		int n = nums.length;
+		backtrack(n, output, res, 0);
+		return res;
+	}
+
+
+
+	public static String multiply(String num1, String num2) {
+		if (num1.equals("0") || num2.equals("0")) {
+			return "0";
+		}
+		int[] res = new int[num1.length() + num2.length()];
+		for (int i = num1.length() - 1; i >= 0; i--) {
+			int n1 = num1.charAt(i) - '0';
+			for (int j = num2.length() - 1; j >= 0; j--) {
+				int n2 = num2.charAt(j) - '0';
+				int sum = (res[i + j + 1] + n1 * n2);
+				res[i + j + 1] = sum % 10;
+				res[i + j] += sum / 10;
+			}
+		}
+
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < res.length; i++) {
+			if (i == 0 && res[i] == 0) continue;
+			result.append(res[i]);
+		}
+		return result.toString();
 	}
 
 	public static double findMedianSortedArrays2(int[] nums1, int[] nums2) {
